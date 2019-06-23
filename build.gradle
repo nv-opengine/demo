@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+import org.gradle.internal.os.OperatingSystem;
+
+mainClassName = 'com.gracefulcode.App'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+    implementation project(':core')
+    implementation project(':vulkan')
+    implementation project(':desktop')
+}
+
+subprojects {
+    apply plugin: 'java'
+}
+
+project(':desktop') {
+    dependencies {
+        implementation project(':core')
+        implementation project(':vulkan')
+    }
+}
+
+project(':vulkan') {
+    dependencies {
+        implementation project(':core')
+    }
+}
+
+run {
+    switch (OperatingSystem.current()) {
+        case OperatingSystem.MAC_OS:
+            project.ext.lwjglNatives = "natives-macos"
+            jvmArgs = "-XstartOnFirstThread"
+    }
+}

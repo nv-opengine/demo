@@ -1,0 +1,9 @@
+[submodule "core"]
+	path = core
+	url = git@github.com:opengine/core.git
+[submodule "desktop"]
+	path = desktop
+	url = git@github.com:opengine/desktop.git
+[submodule "vulkan"]
+	path = vulkan
+	url = git@github.com:opengine/vulkan.git
