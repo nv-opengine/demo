@@ -39,6 +39,6 @@ run {
     switch (OperatingSystem.current()) {
         case OperatingSystem.MAC_OS:
             project.ext.lwjglNatives = "natives-macos"
-            jvmArgs = "-XstartOnFirstThread"
+            jvmArgs '-XstartOnFirstThread'
     }
 }
