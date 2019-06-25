@@ -1,9 +1,12 @@
 [submodule "core"]
 	path = core
 	url = git@github.com:opengine/core.git
+	branch = master
 [submodule "desktop"]
 	path = desktop
 	url = git@github.com:opengine/desktop.git
+	branch = master
 [submodule "vulkan"]
 	path = vulkan
 	url = git@github.com:opengine/vulkan.git
+	branch = master
